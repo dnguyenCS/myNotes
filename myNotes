@@ -1,4 +1,4 @@
-//Scanner
+1. Scanner -------------------------------------------------------------------------------------------------------
 
 import java.util.Scanner;
 
@@ -8,6 +8,28 @@ class apples {
 		// TODO Auto-generated method stub
 			Scanner bucky = new Scanner(System.in);
 			System.out.println(bucky.nextLine());
+	}
+
+}
+
+
+
+2. Calculator -------------------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+
+class apples {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			Scanner bucky = new Scanner(System.in);
+			double fnum, snum, answer;
+			System.out.println("Enter first num: ");
+			fnum = bucky.nextDouble();
+			System.out.println("Enter second num: ");
+			snum = bucky.nextDouble();
+			answer = fnum + snum;
+			System.out.println(answer);
 	}
 
 }
