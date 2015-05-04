@@ -230,4 +230,84 @@ public class tuna {
 
 
 11. Many methods and Instances variables ----------------------------------------------------------------
-https://www.youtube.com/watch?v=9t78g0U8VyQ&index=16&list=PLFE2CE09D83EE3E28
+
+11a.
+import java.util.Scanner;
+
+class apples {
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		//create object of tuna class.. tunaObject
+		tuna tunaObject =  new tuna(); //set it up
+		
+		System.out.println("Enter your first GF name here: ");
+		String temp = input.nextLine();
+				
+		tunaObject.setName(temp); //calling method from other class
+		tunaObject.saying(); //calling again
+	}
+
+}
+
+
+11b.
+
+public class tuna {
+	private String girlName;
+	public void setName (String name){
+		girlName = name;
+	}
+	public String getName(){
+		return girlName;
+	}
+	public void saying(){
+		System.out.printf("Your first gf was %s", getName());
+	}
+}
+
+
+12. Constructors ---------------------------------------------------------------------------------------
+
+12a.
+import java.util.Scanner;
+
+class apples {
+
+	public static void main(String[] args) {
+
+		tuna tunaObject = new tuna("Kelsey");
+		tuna tunaObject2 = new tuna("Nicole");
+		tunaObject.saying(); // calling kelsey
+		tunaObject2.saying(); //another object calling nicole
+	}
+
+}
+
+12b. 
+
+public class tuna {
+	private String girlName;
+	
+	//constructor
+	public tuna(String name){
+		girlName=name;
+	}
+	
+	public void setName (String name){
+		girlName = name;
+	}
+	
+	public String getName(){
+		return girlName;
+	}
+	public void saying(){
+		System.out.printf("Your first gf was %s", getName());
+	}
+}
+
+
+
+13. Nested if statement --------------------------------------------------------------------------------------------------------------------
+
