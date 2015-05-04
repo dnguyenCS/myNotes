@@ -33,3 +33,117 @@ class apples {
 	}
 
 }
+
+3. Math operators ---------------------------------------------------------
+import java.util.Scanner;
+
+class apples {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			Scanner bucky = new Scanner(System.in);
+	
+			int girls, boys, people;
+			girls = 7;
+			boys = 3;
+			people = girls % boys;
+			System.out.println(people);
+	}
+
+}
+
+4. Increment/Assignment Operators -------------------------------------------------------
+
+import java.util.Scanner;
+
+class apples {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			Scanner bucky = new Scanner(System.in);
+	
+			int tuna=5;
+			int bass = 18;
+			
+			//assignment operator
+			tuna  += 8; // add 8 to old variable to get new variable
+			
+			System.out.println(tuna);
+	}
+
+}
+
+5. If Statement ---------------------------------------------------------------------------------------------
+import java.util.Scanner;
+
+class apples {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//conditional statements
+		int test = 6;
+			if (test < 9)//variable in here 
+				{
+				//called if statement body
+				System.out.println("yes");
+			} else {
+				System.out.println("this is else");
+			}
+	}
+
+}
+
+
+6. Logical Operators (using 2 and/or tests)----------------------------------------------------------------------------
+import java.util.Scanner;
+
+class apples {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int boy, girl;
+		boy = 18;
+		girl = 99;
+
+		if (boy > 10 || girl < 60) {
+			System.out.println("You can enter");
+		} else {
+			System.out.println("You can not enter");
+		}
+	}
+
+}
+
+
+7. Switch Statements ------------------------------------------------------------------------------------------
+import java.util.Scanner;
+
+class apples {
+
+	public static void main(String[] args) {
+		int age;
+		age = 7;
+		
+		switch (age){
+		//switch body here
+		case 1:
+			System.out.println("You can crawl");
+			break; //if this is true, just exit the program
+		case 2:
+			System.out.println("You can talk");
+			break;
+		case 3:
+			System.out.println("You can get in trouble");
+			break;
+		default:
+			System.out.println("I dont know how old you are");
+			break;
+			
+		}
+	}
+
+}
+
+
+8. While Loops ------------------------------------------------------------------------------
+
