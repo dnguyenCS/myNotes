@@ -147,3 +147,87 @@ class apples {
 
 8. While Loops ------------------------------------------------------------------------------
 
+import java.util.Scanner;
+
+class apples {
+
+	public static void main(String[] args) {
+		int counter = 0;
+		while (counter < 10) {
+			// while body code
+			System.out.println(counter);
+			counter++;
+		}
+	}
+
+}
+
+
+9. Using Multiple Classes --------------------------------------------------------------------------------------
+
+9a.
+import java.util.Scanner;
+
+class apples {
+
+	public static void main(String[] args) {
+		
+		//create object of tuna class.. tunaObject
+		tuna tunaObject =  new tuna(); //set it up
+		tunaObject.simpleMessage(); //calling method from other class
+		
+	}
+
+}
+
+
+9b.
+
+
+public class tuna {
+	public void simpleMessage(){
+		System.out.println("This is another class");
+	}
+}
+
+
+
+
+10. Methods with Parameters ----------------------------------------------------------------------------------------
+
+10a.
+
+import java.util.Scanner;
+
+class apples {
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		//create object of tuna class.. tunaObject
+		tuna tunaObject =  new tuna(); //set it up
+		
+		System.out.println("Enter your name here: ");
+		String name = input.nextLine();
+		
+		tunaObject.simpleMessage(name); //calling method from other class
+		
+	}
+
+}
+
+
+10b.
+
+
+public class tuna {
+	public void simpleMessage(String name)
+	//added an argument
+	{
+		System.out.println("Hello " + name);
+	}
+}
+
+
+11. Many methods and Instances variables ----------------------------------------------------------------
+https://www.youtube.com/watch?v=9t78g0U8VyQ&index=16&list=PLFE2CE09D83EE3E28
