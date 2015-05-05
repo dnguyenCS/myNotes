@@ -566,22 +566,229 @@ public class tuna {
 	private int hour;
 	private int minute;
 	private int second;
+
+	// first constructor with 0 arguments
+	public tuna() {
+		this(0, 0, 0);
+	}
+
+	public tuna(int h) {
+		this(h, 0, 0);
+	}
+
+	public tuna(int h, int m) {
+		this(h, m, 0);
+	}
+
+	// build constructor with 3 arguments
+	public tuna(int h, int m, int s) {
+		setTime(h, m, s);
+	}
+
+	public void setTime(int h, int m, int s) {
+		setHour(h);
+		setMinute(m);
+		setSecond(s);
+	}
+
+	public void setHour(int h) {
+		hour = ((h >= 0 && h < 24) ? h : 0);
+	}
+
+	public void setMinute(int m) {
+		minute = ((m >= 0 && m < 60) ? m : 0);
+	}
+
+	public void setSecond(int s) {
+		second = ((s >= 0 && s < 60) ? s : 0);
+	}
+
+	public int getHour() {
+		return hour;
+	}
+
+	public int getMinute() {
+		return minute;
+	}
+
+	public int getSecond() {
+		return second;
+	}
+
+	public String toMilitary() {
+		return String.format("%02d:%02d:%02d", getHour(), getMinute(),
+				getSecond());
+	}
+}
+
+
+24. Intro to Arrays ----------------------------------------------------------------------------
+
+import java.util.Scanner;
+import java.util.Random;
+
+class apples {
+
+	public static void main(String[] args) {
+		int bucky[]=new int[10]; //10 variables will be stored
+		
+		bucky[0]=87;
+		bucky[1]=543;
+		bucky[9]=65;
+
+		System.out.println(bucky[1]);
+	}
+}
+
+
+24a. //array initializer
+
+class apples {
+
+	public static void main(String[] args) {
+		int bucky[]={2,4,5,7,9};
+		
+		System.out.println(bucky[2]);
+	}
+}
+
+25. Creating an Array Table ---------------------------------------------------------------
+import java.util.Scanner;
+import java.util.Random;
+
+class apples {
+
+	public static void main(String[] args) {
+		System.out.println("Index\tValue");
+		int bucky[]={32,18,12,54,2};
+		
+		for(int counter=0;counter<bucky.length;counter++){
+			System.out.println(counter + "\t" + bucky[counter]);
+		}
+	}
+}
+
+
+26. Summing Elements of Arrays ---------------------------------------------------------------
+import java.util.Scanner;
+import java.util.Random;
+
+class apples {
+
+	public static void main(String[] args) {
+		int bucky[] = { 21, 16, 86, 21, 3 };
+		int sum = 0;
+
+		for (int counter = 0; counter < bucky.length; counter++) {
+			sum += bucky[counter];
+			// you can do any math operator
+
+		}
+
+		System.out.println("The sum of theze numbers is " + sum);
+	}
+}
+
+27. Array Elements as Counters ------------------------------------------------------------------------------
+import java.util.Scanner;
+import java.util.Random;
+
+class apples {
+
+	public static void main(String[] args) {
+		Random rand = new Random();
+		int freq[]=new int[7];
+		
+		for(int roll=1;roll<1000;roll++){
+			++freq[1+rand.nextInt(6)];
+		}
+		
+		System.out.println("Face\tFrequency");
+		
+		for(int face=1;face<freq.length;face++){
+			System.out.println(face+"\t"+freq[face]);
+		}
+	}
+}
+
+28. Enhanced For Loop -----------------------------------------------------------------------------------------
+import java.util.Scanner;
+import java.util.Random;
+
+class apples {
+
+	public static void main(String[] args) {
+		int bucky[]={3,4,5,6,7};
+		int total=0;
+		
+		for(int x: bucky){
+			total+=x;  //keeps adding array sums
+		}
+		
+		System.out.println(total);
+	}
+}
+
+
+29. Multiple Constructors ------------------------------------------------------------------------------------
+
+public class tuna {
+	private int hour;
+	private int minute;
+	private int second;
 	
+	//first constructor with 0 arguments
 	public tuna(){
 		this(0,0,0);
 	}
 	public tuna(int h){
 		this(h,0,0);
+	}
 	public tuna(int h, int m){
 		this(h,m,0);
-	public tuna
 	}
-	
+	//build constructor with 3 arguments
+	public tuna(int h, int m, int s){
+		setTime(h,m,s);
 	}
-
+	public void setTime(int h, int m, int s){
+		setHour(h);
+		setMinute(m);
+		setSecond(s);
+	}
 }
-//this is incomplete
 
-24. Intro to Arrays ----------------------------------------------------------------------------
 
+30. toString method -------------------------------------------------------------------
+30a.
+import java.util.Scanner;
+import java.util.Random;
+
+class apples {
+
+	public static void main(String[] args) {
+	//create object
+		potpie potObject = new potpie(4,5,6);
+	}
+}
+
+30b.
+public class potpie {
+	private int month;
+	private int day;
+	private int year;
+
+	// constructor
+	public potpie(int m, int d, int y) {
+		month = m;
+		day = d;
+		year = y;
+		
+		System.out.printf("The constructor for this is %s\n", this);
+	}
+
+	public String toString(){
+		return String.format("%d/%d/%d", month, day, year);
+	}
+}
 
