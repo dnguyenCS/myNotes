@@ -310,4 +310,169 @@ public class tuna {
 
 
 13. Nested if statement --------------------------------------------------------------------------------------------------------------------
+import java.util.Scanner;
 
+class apples {
+
+	public static void main(String[] args) {
+		int age = 60;
+		if (age < 50){
+			System.out.println("You are young");
+		} else {
+			System.out.println("You are old");
+			if (age > 75) {
+				System.out.println("You are REALLY old!");
+			} else {
+				System.out.println("Dont worryyou arent really that old");
+			}
+		}
+	
+	}
+
+}
+
+
+
+14. Else-if statements -----------------------------------------------------------------------------------------------------
+import java.util.Scanner;
+
+class apples {
+
+	public static void main(String[] args) {
+		int age = 45;
+
+		if (age >= 60)
+			System.out.println("You are a senior citizen");
+		else if (age >= 50)
+			System.out.println("You are in your 50s");
+		else if (age >= 40)
+			System.out.println("You are in your 40s"); 
+		// you can have as many else ifs that u want
+		else {
+			System.out.println("You are a young buck");
+
+		}
+
+	}
+}
+
+
+15. Conditional operators ---------------------------------------------------------------------------------------------------------------------------------
+import java.util.Scanner;
+
+class apples {
+
+	public static void main(String[] args) {
+		int age = 21;
+		
+		System.out.println(age > 50 ? "You are old" : "You are young");
+		//true is first : false is second
+
+		}
+
+	}
+
+
+
+16. Simple Averaging Program ----------------------------------------------------------------------------------------------
+import java.util.Scanner;
+
+class apples {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int total = 0;
+		int grade;
+		int average;
+		int counter = 0;
+
+		while (counter < 10) {
+			grade = input.nextInt();
+			total = total + grade;
+			counter++;
+		}
+		average = total/10;
+		System.out.println("Your average is "+ average);
+	}
+}
+
+
+
+17. For Loops ----------------------------------------------------------------------------------------------------------
+import java.util.Scanner;
+
+class apples {
+
+	public static void main(String[] args) {
+		for (int counter = 6; counter <= 21; counter += 3)
+		// can count by 3's
+		{
+			// for loop has 3 statement or parameters, loop where to start,end
+			// and how much
+			// incrementing by
+			System.out.println(counter);
+		}
+	}
+}
+
+
+
+18. Compound interest program ------------------------------------------------------------------------------------------------------------
+import java.util.Scanner;
+
+class apples {
+
+	public static void main(String[] args) {
+		// A=P(1+R)^n
+		double amount;
+		double principle = 10000;
+		double rate = .01;
+
+		for (int day = 1; day <= 20; day++) {
+			amount = principle * Math.pow(1 + rate, day);
+			System.out.println(day + "    " + amount);
+		}
+
+	}
+}
+
+
+
+19. Do-While Loops ------------------------------------------------------------------------------------------------------------------------------------------------------
+import java.util.Scanner;
+
+class apples {
+
+	public static void main(String[] args) {
+		// execute the body first to see if u should do the rest or not
+		int counter = 15;
+
+		do {
+			System.out.println(counter);
+			counter++;
+		} while (counter <= 10);
+	}
+}
+
+
+
+20. Math Class Methods --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+import java.util.Scanner;
+
+class apples {
+
+	public static void main(String[] args) {
+		System.out.println(Math.abs(-26.7));
+	// .abs is how far it is from 0
+	// .ceil always rounds up
+	// .floor always rounds down
+	// .max takes the highest number of all numbers
+	// .min takes the lesser number of all numbers
+	// .pow 5,3 is 5 to the 3rd power
+	// .sqrt takes square root of the number
+	}
+}
+
+
+
+21. 
