@@ -492,5 +492,96 @@ class apples {
 	}
 }
 
+22. Inheritance ------------------------------------------------------------------------------------
+
+22a.
+import java.util.Scanner;
+import java.util.Random;
+
+class apples {
+
+	public static void main(String[] args) {
+	tuna tunaObject = new tuna();
+	potpie potObject = new potpie();
+	
+	tunaObject.eat();
+	potObject.eat();
+	}
+}
+
+22b.
+
+public class tuna extends potpie {
+	public void eat(){
+		System.out.println("I am the new eat methods");
+		// this overrides food method
+	}
+
+}
+//can only inherite from public not privates
+
+22c.
+
+public class potpie extends food 
+// now it takes everything from food
+{
+
+	
+}
+
+22d.
+//super class that gives stuff or info to potpie and tuna
+public class food {
+	public void eat(){
+		System.out.println("I am the eat methods");
+		
+	}
+}
+
+
+
+23. Building Objects for Constructors ----------------------------------------------------------------------------
+23a.
+import java.util.Scanner;
+import java.util.Random;
+
+class apples {
+
+	public static void main(String[] args) {
+	
+		tuna tunaObject = new tuna();
+		tuna tunaObject2 = new tuna(5);
+		tuna tunaObject3 = new tuna(5,13);
+		tuna tunaObject4 = new tuna(5,13,43);
+		
+		System.out.printf("%s\n", tunaObject.toMilitary());
+		System.out.printf("%s\n", tunaObject2.toMilitary());
+		System.out.printf("%s\n", tunaObject3.toMilitary());
+		System.out.printf("%s\n", tunaObject4.toMilitary());
+	}
+}
+23b.
+
+public class tuna {
+	private int hour;
+	private int minute;
+	private int second;
+	
+	public tuna(){
+		this(0,0,0);
+	}
+	public tuna(int h){
+		this(h,0,0);
+	public tuna(int h, int m){
+		this(h,m,0);
+	public tuna
+	}
+	
+	}
+
+}
+//this is incomplete
+
+24. Intro to Arrays ----------------------------------------------------------------------------
 
 
