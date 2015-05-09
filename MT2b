@@ -1,0 +1,26 @@
+
+public class ThreeDice {
+	private int diceSides;
+	private int diceCount;
+	private static int history = 0;
+	
+	public ThreeDice (int faces) {
+		diceSides = faces;
+		roll();
+		history ++;
+	}
+	public int roll(){
+		diceCount = (int)(Math.random()*diceSides)+1;
+		if (diceCount > diceSides) {
+			diceCount = diceSides;
+		}
+		return diceCount;
+		}
+	public int getDiceCount()
+	{
+		return diceCount;
+	}
+		public static int getHistory(){
+			return history;
+	}
+}
