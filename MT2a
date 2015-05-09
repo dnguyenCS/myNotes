@@ -1,0 +1,110 @@
+import java.util.Scanner;
+
+public class apples {
+	public static void main(String[] args){
+		int sum = 0;
+		int min = 0;
+		int max = 0;
+		int mid = 0;
+		int num = 0;
+		int countGames = 0;
+		int score = 0;
+		
+		
+		String a;
+		String guess;
+		String middleString = Integer.toString(mid);
+		String sumString = Integer.toString(sum);
+		
+		min = minValue(num);
+		max = maxValue (num);
+		mid = midValue(max);
+	do{	
+		do{
+			
+		Scanner in = new Scanner(System.in);
+		System.out.println("How many dice do you want to roll?: ");
+		num = in.nextInt();
+		if (num == 0 || num <0 || num >3) {
+			System.out.println("Please select from 1-3.");		}
+		
+		}while (num == 0 || num <0 || num > 3);
+			
+		ThreeDice[] array = new ThreeDice[num];
+		
+		for (int i = 0; i < num; i++) {
+			array[i] = new ThreeDice(6);
+		}
+	
+		for (int i = 0; i < num; i++) {
+			array[i].roll();
+			}
+		
+		for (int j = 0; j < num; j++) {
+			sum = sum + array[j].getDiceCount();	
+		}
+		System.out.println("Please make a guess of Hi, Low, Middle (H/L/M): ");
+		Scanner in2 = new Scanner (System.in);
+		guess = in2.nextLine();
+		
+		
+		countGames++;
+	
+		System.out.println("Roll Sums: " + sum);
+			if (guess.equals(sumString) && guess.equals(middleString)){
+				System.out.println("Awesome you guessed the Middle number!");
+				score = score+5;
+			}
+			else {
+				if (guess.equalsIgnoreCase("H")){
+					if (sum>(max/2)&& sum<max) {
+						System.out.println ("You guessed High correctly!");
+						score++;
+					} else {
+						System.out.println("Nice try.");
+						score--;
+						
+					}
+				}
+				if (guess.equalsIgnoreCase("L")){
+					if (sum < (max/2) && sum > min) {
+						System.out.println ("You guessed Low correctly!");
+						score++;
+					} else {
+						System.out.println("Nice try.");
+						score--;
+					}
+				}
+			
+			}
+			
+sum = 0;
+
+System.out.println("Number of Games Played: " + countGames);
+System.out.println("Score: "+score);
+System.out.println("Play Again?: ");
+Scanner read1 = new Scanner(System.in);
+a = read1.nextLine();
+} while (a.equalsIgnoreCase("Y"));
+System.out.println("Bye");
+
+}
+
+
+
+public static int minValue(int first) {
+	int minV = first;
+	return minV;
+}
+
+public static int maxValue (int second) {
+	int maxV = second*6;
+	return maxV;
+}
+
+	public static int midValue (int third) {
+		int midV = third/2;
+		return midV;
+	
+	}
+}
