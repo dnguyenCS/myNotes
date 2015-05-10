@@ -10,14 +10,17 @@ public class apples {
 		int countH=0;
         int countL=0;
         int countM=0; // variables for guessing high,low or mid
-		int countGames = 0;
+		//tracking number of games
+        int countGames = 0;
+        //tracking score
 		int score = 0;
 	
 		String a;
 		String guess;
+	//convert to strings
 		String middleString = Integer.toString(mid);
 		String sumString = Integer.toString(sum);
-
+// finding min and max values as dice are rolled
 		min = minValue(num);
 		max = maxValue(num);
 		mid = midValue(max);
@@ -34,13 +37,13 @@ public class apples {
 				}
 
 			} while (num == 0 || num < 0 || num > 3);
-
+// creating array for dice values
 			ThreeDice[] array = new ThreeDice[num]; //constructor
-
+// roll all dices
 			for (int i = 0; i < num; i++) {
 				array[i] = new ThreeDice(6);
 			}
-
+// sum of all dices
 			for (int i = 0; i < num; i++) {
 				array[i].roll();
 			}
@@ -98,11 +101,12 @@ public class apples {
 
 			//Track of system number
 			System.out.println("Number of Games Played: " + countGames);
-			//Final tally of points here
-			System.out.println("Score: " + score);
 			System.out.println("Low guesses: " + countL);
 			System.out.println("High guesses: " + countH);
 			System.out.println("Middle guesses: " + countM);
+			//Final tally of points here
+			System.out.println("Score: " + score);
+			
 			System.out.println("Play Again?: ");
 			Scanner read1 = new Scanner(System.in);
 			a = read1.nextLine();
@@ -110,22 +114,20 @@ public class apples {
 		System.out.println("See ya");
 
 	}
-
+//finding minimum value
 	public static int minValue(int first) {
 		int minV = first;
 		return minV;
 	}
-
+//finding maximum value
 	public static int maxValue(int second) {
 		int maxV = second * 6;
 		return maxV;
 	}
-
+//finding middle value
 	public static int midValue(int third) {
 		int midV = third / 2;
 		return midV;
 	}
-	private static int getRoll() {
-             return (int) (Math.random() * 6) + 1;
-	}
+
 }
