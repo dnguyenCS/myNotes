@@ -64,22 +64,22 @@ public class apples {
 			
 			if (guess.equalsIgnoreCase("M")) {
 				if (guess.equals(sumString) && guess.equals(middleString)) {
-					System.out.println("Awesome you guessed the Middle number! +5");
+					System.out.println("Awesome you guessed the Middle number! +5 points");
 					score = score + 5;
 					countM++; //tracking middle counts
 				} else {
-					System.out.println("Nice try. -1");
+					System.out.println("Nice try. -1 point");
 					score--;
 					countM++;
 				}
 			} else {
 				if (guess.equalsIgnoreCase("H")) {
 					if (sum > (max / 2) && sum < max) {
-						System.out.println("You guessed High correctly! +1");
+						System.out.println("You guessed High correctly! +1 point");
 						score++;
 						countH++; //tracking high guesses
 					} else {
-						System.out.println("Nice try. -1");
+						System.out.println("Nice try. -1 point");
 						score--;
 						countH++; 
 
@@ -87,11 +87,11 @@ public class apples {
 				}
 				if (guess.equalsIgnoreCase("L")) {
 					if (sum < (max / 2) && sum > min) {
-						System.out.println("You guessed Low correctly! +1");
+						System.out.println("You guessed Low correctly! +1 point");
 						score++;
 						countL++; // tracking low guesses
 					} else {
-						System.out.println("Nice try. -1");
+						System.out.println("Nice try. -1 point");
 						score--;
 						countL++;
 					}
