@@ -14,7 +14,9 @@ public class apples {
         int countGames = 0;
         //tracking score
 		int score = 0;
-	
+
+		sum = 0;
+		
 		String a;
 		String guess;
 	//convert to strings
@@ -32,11 +34,11 @@ public class apples {
 				Scanner in = new Scanner(System.in);
 				System.out.println("How many dice do you want to roll?: ");
 				num = in.nextInt();
-				if (num == 0 || num < 0 || num > 3) {
-					System.out.println("Please select from 1-3.");
+				if (num == 0 || num < 0 || num > 100) {
+					System.out.println("Please select from 1-100.");
 				}
 
-			} while (num == 0 || num < 0 || num > 3);
+			} while (num == 0 || num < 0 || num > 100);
 // creating array for dice values
 			ThreeDice[] array = new ThreeDice[num]; //constructor
 // roll all dices
@@ -62,22 +64,22 @@ public class apples {
 			
 			if (guess.equalsIgnoreCase("M")) {
 				if (guess.equals(sumString) && guess.equals(middleString)) {
-					System.out.println("Awesome you guessed the Middle number!");
+					System.out.println("Awesome you guessed the Middle number! +5");
 					score = score + 5;
 					countM++; //tracking middle counts
 				} else {
-					System.out.println("Nice try.");
+					System.out.println("Nice try. -1");
 					score--;
 					countM++;
 				}
 			} else {
 				if (guess.equalsIgnoreCase("H")) {
 					if (sum > (max / 2) && sum < max) {
-						System.out.println("You guessed High correctly!");
+						System.out.println("You guessed High correctly! +1");
 						score++;
 						countH++; //tracking high guesses
 					} else {
-						System.out.println("Nice try.");
+						System.out.println("Nice try. -1");
 						score--;
 						countH++; 
 
@@ -85,11 +87,11 @@ public class apples {
 				}
 				if (guess.equalsIgnoreCase("L")) {
 					if (sum < (max / 2) && sum > min) {
-						System.out.println("You guessed Low correctly!");
+						System.out.println("You guessed Low correctly! +1");
 						score++;
 						countL++; // tracking low guesses
 					} else {
-						System.out.println("Nice try.");
+						System.out.println("Nice try. -1");
 						score--;
 						countL++;
 					}
@@ -97,19 +99,19 @@ public class apples {
 
 			}
 
-			sum = 0;
 
 			//Track of system number
+			System.out.println("Dice sum value: " + sum);
 			System.out.println("Number of Games Played: " + countGames);
 			System.out.println("Low guesses: " + countL);
 			System.out.println("High guesses: " + countH);
 			System.out.println("Middle guesses: " + countM);
 			//Final tally of points here
-			System.out.println("Score: " + score);
+			System.out.println("Final score: " + score);
 			
 			System.out.println("Play Again?: ");
-			Scanner read1 = new Scanner(System.in);
-			a = read1.nextLine();
+			Scanner in3 = new Scanner(System.in);
+			a = in3.nextLine();
 		} while (a.equalsIgnoreCase("Y"));
 		System.out.println("See ya");
 
