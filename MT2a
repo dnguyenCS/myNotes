@@ -9,8 +9,7 @@ public class apples {
 		int num = 0;
 		int countGames = 0;
 		int score = 0;
-		int rolls = 3, roll1, roll2, roll3;
-
+	
 		String a;
 		String guess;
 		String middleString = Integer.toString(mid);
