@@ -4,11 +4,13 @@ public class ThreeDice {
 	private int diceCount;
 	private static int history = 0;
 	
+	//contructor
 	public ThreeDice (int faces) {
 		diceSides = faces;
 		roll();
 		history ++;
 	}
+	//roll
 	public int roll(){
 		diceCount = (int)(Math.random()*diceSides)+1;
 		if (diceCount > diceSides) {
@@ -16,11 +18,13 @@ public class ThreeDice {
 		}
 		return diceCount;
 		}
+	//how much the dice amounts to
 	public int getDiceCount()
 	{
 		return diceCount;
 	}
-		public static int getHistory(){
+	//get number of objects
+	public static int getHistory(){
 			return history;
 	}
 }
