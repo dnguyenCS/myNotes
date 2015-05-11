@@ -40,10 +40,10 @@ public class apples {
 
 			} while (num == 0 || num < 0 || num > 100);
 // creating array for dice values
-			ThreeDice[] array = new ThreeDice[num]; //constructor
+			RollAllDice [] array = new RollAllDice[num]; //constructor
 // roll all dices
 			for (int i = 0; i < num; i++) {
-				array[i] = new ThreeDice(6);
+				array[i] = new RollAllDice(6);
 			}
 // sum of all dices
 			for (int i = 0; i < num; i++) {
@@ -68,7 +68,7 @@ public class apples {
 					score = score + 5;
 					countM++; //tracking middle counts
 				} else {
-					System.out.println("Nice try. -1 point");
+					System.out.println("You guessed incorrectly. Nice try. -1 point");
 					score--;
 					countM++;
 				}
@@ -79,7 +79,7 @@ public class apples {
 						score++;
 						countH++; //tracking high guesses
 					} else {
-						System.out.println("Nice try. -1 point");
+						System.out.println("You guessed incorrectly. Nice try. -1 point");
 						score--;
 						countH++; 
 
@@ -91,7 +91,7 @@ public class apples {
 						score++;
 						countL++; // tracking low guesses
 					} else {
-						System.out.println("Nice try. -1 point");
+						System.out.println("You guessed incorrectly. Nice try. -1 point");
 						score--;
 						countL++;
 					}
@@ -132,4 +132,6 @@ public class apples {
 		return midV;
 	}
 
+	
+	
 }
