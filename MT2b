@@ -3,7 +3,7 @@ public class RollAllDice {
 	private int diceCount;
 	private static int history = 0;
 	
-	//contructor
+	//constructor
 	public RollAllDice (int faces) {
 		diceSides = faces;
 		roll();
@@ -22,7 +22,7 @@ public class RollAllDice {
 	{
 		return diceCount;
 	}
-	//get number of objects
+	//get number of objects or history
 	public static int getHistory(){
 			return history;
 	}
