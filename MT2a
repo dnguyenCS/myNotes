@@ -7,27 +7,27 @@ public class MidtermTwo {
 		int max = 0;
 		int mid = 0;
 		int num = 0;
-		int countH=0;
-        int countL=0;
-        int countM=0; // variables for guessing high,low or mid
-		//tracking number of games
-        int countGames = 0;
-        //tracking score
+		int countH = 0;
+		int countL = 0;
+		int countM = 0; // variables for guessing high,low or mid counts
+		// tracking number of games
+		int countGames = 0;
+		// tracking score
 		int score = 0;
-
+		// initializing and starting sum
 		sum = 0;
-		
+		// user inputs - play again
 		String a;
+		// user inputs - guess High Low or Middle
 		String guess;
-	//convert to strings
 		String middleString = Integer.toString(mid);
 		String sumString = Integer.toString(sum);
-// finding min and max values as dice are rolled
+		// finding min and max values as dice are rolled
 		min = minValue(num);
 		max = maxValue(num);
 		mid = midValue(max);
-		
-		//start game implementing objects
+
+		// start game implementing objects
 		do {
 			do {
 
@@ -39,13 +39,13 @@ public class MidtermTwo {
 				}
 
 			} while (num == 0 || num < 0 || num > 100);
-// creating array for dice values
-			RollAllDice [] array = new RollAllDice[num]; //constructor
-// roll all dices
+			// creating array for dice values
+			RollAllDice[] array = new RollAllDice[num]; // constructor
+			// roll all dices
 			for (int i = 0; i < num; i++) {
 				array[i] = new RollAllDice(6);
 			}
-// sum of all dices
+			// sum of all dices
 			for (int i = 0; i < num; i++) {
 				array[i].roll();
 			}
@@ -58,40 +58,45 @@ public class MidtermTwo {
 			Scanner in2 = new Scanner(System.in);
 			guess = in2.nextLine();
 
-			//tracking number of games played
+			// tracking number of games played
 			countGames++;
 
-			
 			if (guess.equalsIgnoreCase("M")) {
 				if (guess.equals(sumString) && guess.equals(middleString)) {
-					System.out.println("Awesome you guessed the Middle number! +5 points");
+					System.out
+							.println("Awesome you guessed the Middle number! +5 points");
 					score = score + 5;
-					countM++; //tracking middle counts
+					countM++; // tracking middle counts
 				} else {
-					System.out.println("You guessed incorrectly. Nice try. -1 point");
+					System.out
+							.println("You guessed incorrectly. Nice try. -1 point");
 					score--;
 					countM++;
 				}
 			} else {
 				if (guess.equalsIgnoreCase("H")) {
 					if (sum > (max / 2) && sum < max) {
-						System.out.println("You guessed High correctly! +1 point");
+						System.out
+								.println("You guessed High correctly! +1 point");
 						score++;
-						countH++; //tracking high guesses
+						countH++; // tracking high guesses
 					} else {
-						System.out.println("You guessed incorrectly. Nice try. -1 point");
+						System.out
+								.println("You guessed incorrectly. Nice try. -1 point");
 						score--;
-						countH++; 
+						countH++;
 
 					}
 				}
 				if (guess.equalsIgnoreCase("L")) {
 					if (sum < (max / 2) && sum > min) {
-						System.out.println("You guessed Low correctly! +1 point");
+						System.out
+								.println("You guessed Low correctly! +1 point");
 						score++;
 						countL++; // tracking low guesses
 					} else {
-						System.out.println("You guessed incorrectly. Nice try. -1 point");
+						System.out
+								.println("You guessed incorrectly. Nice try. -1 point");
 						score--;
 						countL++;
 					}
@@ -99,16 +104,15 @@ public class MidtermTwo {
 
 			}
 
-
-			//Track of system number
+			// Track of system number
 			System.out.println("Dice sum value: " + sum);
 			System.out.println("Number of Games Played: " + countGames);
 			System.out.println("Low guesses: " + countL);
 			System.out.println("High guesses: " + countH);
 			System.out.println("Middle guesses: " + countM);
-			//Final tally of points here
+			// Final tally of points here
 			System.out.println("Final score: " + score);
-			
+
 			System.out.println("Play Again?: ");
 			Scanner in3 = new Scanner(System.in);
 			a = in3.nextLine();
@@ -116,22 +120,23 @@ public class MidtermTwo {
 		System.out.println("See ya");
 
 	}
-//finding minimum value
+
+	// finding minimum value
 	public static int minValue(int first) {
 		int minV = first;
 		return minV;
 	}
-//finding maximum value
+
+	// finding maximum value
 	public static int maxValue(int second) {
 		int maxV = second * 6;
 		return maxV;
 	}
-//finding middle value
+
+	// finding middle value
 	public static int midValue(int third) {
 		int midV = third / 2;
 		return midV;
 	}
 
-	
-	
 }
