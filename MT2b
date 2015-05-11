@@ -1,11 +1,10 @@
-
-public class ThreeDice {
+public class RollAllDice {
 	private int diceSides;
 	private int diceCount;
 	private static int history = 0;
 	
 	//contructor
-	public ThreeDice (int faces) {
+	public RollAllDice (int faces) {
 		diceSides = faces;
 		roll();
 		history ++;
